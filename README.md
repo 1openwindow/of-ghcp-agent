@@ -35,19 +35,15 @@ copilot                                   # open the Copilot CLI here
 
 In the session, say:
 
-> Deploy this Copilot agent to Foundry, then send it "Tell me a joke" and show the reply.
+> Deploy this Copilot agent to Foundry.
 
-The skill scaffolds the standard files and deploys — no `Dockerfile`, `agent.yaml`,
-or `requirements.txt` to write by hand. Two Copilot-specific points it will confirm
-with you:
+Once it's running, invoke the agent from this repo:
 
-- **Runtime image** selects the harness — use a `ghcp-foundry-runtime` image (e.g.
-  `ghcr.io/1openwindow/ghcp-foundry-runtime:latest`), not the pi image.
-- **Model auth is BYOK (API key)** — Copilot doesn't support managed identity, so
-  supply your model's API key + base URL when asked.
+```bash
+azd ai agent invoke of-ghcp-agent '{"input": "Tell me a joke"}'
+```
 
-A pirate-tone reply (`Arrr`, `matey`, `ye`) confirms the `joke` skill loaded.
-Reset afterwards with `git clean` (below).
+The reply comes back in a swashbuckling pirate tone.
 
 ## Testing repeatedly (keep the sample fresh)
 
@@ -64,13 +60,3 @@ git clean -fdX -e .azure   # ...but keep your azd env for a faster re-deploy
 ```
 
 Afterwards `git status` should report nothing to commit.
-
-## Use it (once running)
-
-Send the agent a message asking for a joke:
-
-```json
-{"input": "Tell me a joke"}
-```
-
-The reply comes back in a swashbuckling pirate tone.
