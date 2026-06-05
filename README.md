@@ -74,24 +74,3 @@ Send the agent a message asking for a joke:
 ```
 
 The reply comes back in a swashbuckling pirate tone.
-
-## Adding more skills
-
-Create a new folder under `.github/skills/` with a `SKILL.md`:
-
-```
-.github/skills/
-└── my-skill/
-    └── SKILL.md
-```
-
-```markdown
----
-name: my-skill
-description: What this skill does.
----
-
-# My Skill
-
-Instructions for Copilot when this skill is active.
-```
