@@ -22,3 +22,6 @@ agent.manifest.yaml
 .DS_Store
 .vscode/
 .idea/
+
+# ignore npx skills lock file; keep the sample fresh BYO
+skills-lock.json

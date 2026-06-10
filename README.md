@@ -29,7 +29,7 @@ harness — so the deploy is exercised end-to-end:
 ```bash
 git clone https://github.com/1openwindow/of-ghcp-agent
 cd of-ghcp-agent
-gh skill install 1openwindow/open-foundry --allow-hidden-dirs # install (once; needs gh >= 2.90.0)
+npx skills add 1openwindow/open-foundry --agent github-copilot -y
 copilot                                   # open the Copilot CLI here
 ```
 
